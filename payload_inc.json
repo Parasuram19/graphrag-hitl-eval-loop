@@ -1,0 +1,32 @@
+{
+  "id": "doc-incident-response",
+  "title": "Incident Response Runbook",
+  "content": "Incident Response Runbook v1.5\n\nThe Incident Response Runbook is owned by the Security Team and maintained by the Site Reliability Engineering Team.\n\nIncident Severity Levels:\n- SEV1: Complete system outage affecting all users. Response time: 5 minutes.\n- SEV2: Major feature degradation affecting more than 30% of users. Response time: 15 minutes.\n- SEV3: Minor degradation affecting less than 30% of users. Response time: 1 hour.\n- SEV4: Cosmetic issues with no user impact. Response time: next business day.\n\nIncident Response Process:\n1. Detection: Automated alerts trigger via PagerDuty\n2. Triage: On-call engineer assesses severity within 5 minutes\n3. Escalation: SEV1 incidents automatically page the Security Team Lead and Engineering Manager\n4. Mitigation: Apply rollback, feature flag, or hotfix\n5. Resolution: Confirm all systems operational\n6. Post-mortem: Write incident report within 48 hours\n\nThe Security Team must be notified for any incident involving data breach, unauthorized access, or potential data exfiltration.\n\nThe Engineering Team owns the on-call rotation. Each engineer serves one week on-call per quarter.\n\nCommunication during incidents:\n- Internal: Slack channel #incident-response\n- External: Status page updates every 15 minutes for SEV1/SEV2\n- Executive: Email to VP Engineering for SEV1 only\n\nThis runbook is reviewed monthly by the Security Team and Site Reliability Engineering Team.",
+  "metadata": {
+    "version": "1.5",
+    "department": "Security",
+    "classification": "Internal",
+    "last_reviewed": "2025-01-10"
+  },
+  "allowed_roles": ["Engineering", "Security", "SRE"],
+  "entities": [
+    {"name": "Incident Response Runbook", "kind": "Runbook"},
+    {"name": "Security Team", "kind": "Team"},
+    {"name": "Site Reliability Engineering Team", "kind": "Team"},
+    {"name": "Engineering Team", "kind": "Team"},
+    {"name": "SEV1 Incident", "kind": "IncidentLevel"},
+    {"name": "SEV2 Incident", "kind": "IncidentLevel"},
+    {"name": "Post-mortem Process", "kind": "Process"},
+    {"name": "PagerDuty", "kind": "Tool"}
+  ],
+  "relationships": [
+    {"source": "Incident Response Runbook", "target": "Security Team", "type": "OWNED_BY"},
+    {"source": "Incident Response Runbook", "target": "Site Reliability Engineering Team", "type": "MAINTAINED_BY"},
+    {"source": "Engineering Team", "target": "Incident Response Runbook", "type": "FOLLOWS"},
+    {"source": "Incident Response Runbook", "target": "SEV1 Incident", "type": "DEFINES"},
+    {"source": "Incident Response Runbook", "target": "SEV2 Incident", "type": "DEFINES"},
+    {"source": "Incident Response Runbook", "target": "Post-mortem Process", "type": "REQUIRES"},
+    {"source": "Incident Response Runbook", "target": "PagerDuty", "type": "USES_TOOL"},
+    {"source": "Security Team", "target": "Site Reliability Engineering Team", "type": "COLLABORATES_WITH"}
+  ]
+}

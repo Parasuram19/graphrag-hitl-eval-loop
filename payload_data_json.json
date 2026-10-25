@@ -1,0 +1,28 @@
+{
+  "id": "doc-data-retention",
+  "title": "Data Retention Policy",
+  "content": "Data Retention Policy v2.1\n\nThe Data Retention Policy is owned by the Security Team and applies to all production environments.\n\nAll production data must be retained for a minimum of 365 days. After the retention period expires, data must be permanently deleted within 30 days.\n\nThe Security Team is responsible for enforcing data deletion schedules. The Engineering Team must implement automated deletion pipelines for all production databases.\n\nBackup data follows the same retention schedule as primary data. Backups older than 365 days must be destroyed.\n\nData classification levels:\n- Public: No retention restrictions\n- Internal: 365 days minimum retention\n- Confidential: 730 days minimum retention\n- Restricted: 1095 days minimum retention\n\nThe Compliance Team audits retention compliance quarterly. Any violations must be reported to the Security Team within 24 hours.\n\nExceptions to this policy require written approval from both the Security Team Lead and the Compliance Team Lead.",
+  "metadata": {
+    "version": "2.1",
+    "department": "Security",
+    "classification": "Internal",
+    "last_reviewed": "2024-11-15"
+  },
+  "allowed_roles": ["Engineering", "Security", "Compliance"],
+  "entities": [
+    {"name": "Data Retention Policy", "kind": "Policy"},
+    {"name": "Security Team", "kind": "Team"},
+    {"name": "Engineering Team", "kind": "Team"},
+    {"name": "Compliance Team", "kind": "Team"},
+    {"name": "Production Data", "kind": "DataClass"},
+    {"name": "Backup Data", "kind": "DataClass"}
+  ],
+  "relationships": [
+    {"source": "Data Retention Policy", "target": "Security Team", "type": "OWNED_BY"},
+    {"source": "Data Retention Policy", "target": "Engineering Team", "type": "ENFORCED_BY"},
+    {"source": "Data Retention Policy", "target": "Production Data", "type": "APPLIES_TO"},
+    {"source": "Data Retention Policy", "target": "Backup Data", "type": "APPLIES_TO"},
+    {"source": "Compliance Team", "target": "Data Retention Policy", "type": "AUDITS"},
+    {"source": "Security Team", "target": "Engineering Team", "type": "COLLABORATES_WITH"}
+  ]
+}

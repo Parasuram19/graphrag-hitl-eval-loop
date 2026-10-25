@@ -1,0 +1,16 @@
+# Environment & Secrets
+.env
+*.env
+
+# Virtual Environment
+venv/
+graph-rag-feedback/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,27 @@
+{
+  "id": "doc-compensation-policy",
+  "title": "Employee Compensation Policy",
+  "content": "Employee Compensation Policy v3.0\n\nThe Employee Compensation Policy is owned by the HR Team and managed by the Compensation Committee.\n\nSalary Structure:\n- Level 1 (Junior): $60,000 - $85,000 base salary\n- Level 2 (Mid): $85,000 - $120,000 base salary\n- Level 3 (Senior): $120,000 - $160,000 base salary\n- Level 4 (Staff): $160,000 - $200,000 base salary\n- Level 5 (Principal): $200,000 - $250,000 base salary\n\nAnnual bonuses are calculated as a percentage of base salary:\n- Junior: 5-10%\n- Mid: 10-15%\n- Senior: 15-20%\n- Staff: 20-25%\n- Principal: 25-35%\n\nStock options are granted annually during the compensation review cycle in March. Vesting period is 4 years with a 1-year cliff.\n\nThe HR Team conducts compensation benchmarking twice per year using market data from Radford and Mercer surveys.\n\nCompensation adjustments take effect on April 1st each year. Off-cycle adjustments require VP-level approval.\n\nThis document is restricted to HR and Management roles only. Engineering and other departments must not access this information.",
+  "metadata": {
+    "version": "3.0",
+    "department": "HR",
+    "classification": "Confidential",
+    "last_reviewed": "2024-12-01"
+  },
+  "allowed_roles": ["HR", "Management"],
+  "entities": [
+    {"name": "Employee Compensation Policy", "kind": "Policy"},
+    {"name": "HR Team", "kind": "Team"},
+    {"name": "Compensation Committee", "kind": "Team"},
+    {"name": "Stock Options", "kind": "Benefit"},
+    {"name": "Annual Bonus", "kind": "Benefit"},
+    {"name": "Compensation Benchmarking", "kind": "Process"}
+  ],
+  "relationships": [
+    {"source": "Employee Compensation Policy", "target": "HR Team", "type": "OWNED_BY"},
+    {"source": "Employee Compensation Policy", "target": "Compensation Committee", "type": "MANAGED_BY"},
+    {"source": "Employee Compensation Policy", "target": "Stock Options", "type": "DEFINES"},
+    {"source": "Employee Compensation Policy", "target": "Annual Bonus", "type": "DEFINES"},
+    {"source": "HR Team", "target": "Compensation Benchmarking", "type": "PERFORMS"}
+  ]
+}

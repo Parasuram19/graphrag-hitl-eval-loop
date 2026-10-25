@@ -1,0 +1,30 @@
+{
+  "id": "doc-onboarding",
+  "title": "Employee Onboarding Guide",
+  "content": "Employee Onboarding Guide v4.2\n\nThe Employee Onboarding Guide is owned by the HR Team and applies to all new hires across all departments.\n\nWeek 1 - Orientation:\n- Day 1: HR welcome session, laptop setup, security badge issuance\n- Day 2: Team introductions, project overview, development environment setup\n- Day 3: Security training (mandatory), compliance training (mandatory)\n- Day 4: Codebase walkthrough, first code review\n- Day 5: First ticket assignment, pair programming session\n\nWeek 2 - Integration:\n- Attend all team standups and planning meetings\n- Complete security certification quiz (passing score: 80%)\n- Submit first pull request by end of Week 2\n- Schedule 1-on-1 meetings with all team members\n\nWeek 3-4 - Contribution:\n- Own at least one feature or bug fix independently\n- Participate in on-call shadowing (Engineering roles)\n- Complete department-specific training modules\n- Submit feedback on onboarding experience to HR Team\n\nMandatory Trainings:\n- Data Retention Policy awareness (all employees)\n- Incident Response awareness (Engineering and Security)\n- Compensation confidentiality agreement (all employees)\n- Security awareness training (all employees)\n\nThe HR Team tracks onboarding completion via the HRIS system. Managers receive weekly progress reports during the first 30 days.\n\nThis guide is publicly accessible to all employees and contractors.",
+  "metadata": {
+    "version": "4.2",
+    "department": "HR",
+    "classification": "Public",
+    "last_reviewed": "2025-02-01"
+  },
+  "allowed_roles": [],
+  "entities": [
+    {"name": "Employee Onboarding Guide", "kind": "Guide"},
+    {"name": "HR Team", "kind": "Team"},
+    {"name": "Security Training", "kind": "Training"},
+    {"name": "Compliance Training", "kind": "Training"},
+    {"name": "Data Retention Policy", "kind": "Policy"},
+    {"name": "Incident Response Runbook", "kind": "Runbook"},
+    {"name": "Employee Compensation Policy", "kind": "Policy"}
+  ],
+  "relationships": [
+    {"source": "Employee Onboarding Guide", "target": "HR Team", "type": "OWNED_BY"},
+    {"source": "Employee Onboarding Guide", "target": "Security Training", "type": "REQUIRES"},
+    {"source": "Employee Onboarding Guide", "target": "Compliance Training", "type": "REQUIRES"},
+    {"source": "Employee Onboarding Guide", "target": "Data Retention Policy", "type": "REFERENCES"},
+    {"source": "Employee Onboarding Guide", "target": "Incident Response Runbook", "type": "REFERENCES"},
+    {"source": "Employee Onboarding Guide", "target": "Employee Compensation Policy", "type": "REFERENCES"},
+    {"source": "HR Team", "target": "Employee Onboarding Guide", "type": "MAINTAINS"}
+  ]
+}
